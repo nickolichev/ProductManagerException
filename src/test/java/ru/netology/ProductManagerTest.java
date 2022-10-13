@@ -41,7 +41,6 @@ public class ProductManagerTest {
 
   @Test // генерация AlreadyExistsException при попытке добавить элемент с повторяющимся id
   public void addAlreadyExistsProductById() {
-    manager.add(Bestseller);
 
     assertThrows(AlreadyExistsException.class, () -> {
       manager.add(Bestseller);

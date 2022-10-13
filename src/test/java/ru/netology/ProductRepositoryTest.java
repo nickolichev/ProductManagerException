@@ -43,10 +43,9 @@ public class ProductRepositoryTest {
     Assertions.assertArrayEquals(expected, actual);
   }
 
-  @Test // генерация NotFoundException при попытке удаления несуществующего элемента
-  public void removeNotFoundProductById() {
-    repository.removeById(1105);
+  @Test // генерация NotFoundIdException при попытке удаления несуществующего элемента
+  public void removeNotFoundIdProductById() {
 
-    assertThrows(NotFoundException.class, () -> {repository.removeById(1105);});
+    assertThrows(NotFoundIdException.class, () -> {repository.removeById(-1105);});
   }
 }
